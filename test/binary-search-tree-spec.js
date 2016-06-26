@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import BST from '../src/binary-tree.js';
+import BST from '../src/binary-search-tree.js';
 
 describe('Binary Search Tree', () => {
 
@@ -42,6 +42,30 @@ describe('Binary Search Tree', () => {
 
       expect(arr).to.be.a('array');
       expect(arr).to.deep.equal([3, 16, 22, 23, 37, 45, 99]);
+    });
+
+    it('getMin returns minimum value', () => {
+      let min = nums.getMin();
+
+      expect(min).to.equal(3);
+    });
+
+    it('getMax returns maximum value', () => {
+      let max = nums.getMax();
+
+      expect(max).to.equal(99);
+    });
+
+    it('will successfully find an element', () => {
+      let n = nums.find(99);
+
+      expect(n.data).to.equal(99);
+    });
+
+    it('remove will successfully remove a node', () => {
+      nums.remove(23);
+
+      expect(nums.toArray()).to.deep.equal([3, 16, 22, 37, 45, 99])
     });
 
   });
