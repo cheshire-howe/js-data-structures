@@ -2,7 +2,7 @@
   "name": "dsa",
   "version": "1.0.0",
   "description": "",
-  "main": "list.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --recursive",
     "test:watch": "npm run test -- watch",
