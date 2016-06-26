@@ -48,6 +48,23 @@ class BST {
     }
   }
 
+  traverse(cb) {
+    const iterate = (node) => {
+      if (node) {
+        if (node.left != null) {
+          iterate(node.left);
+        }
+
+        cb.call(this, node);
+
+        if (node.right != null) {
+          iterate(node.right);
+        }
+      }
+    };
+    iterate(this.root);
+  }
+
   inOrder(node) {
     if (!(node == null)) {
       this.inOrder(node.left);
@@ -153,6 +170,15 @@ class BST {
       node.right = this.removeNode(node.right, data);
       return node;
     }
+  }
+
+  toArray() {
+    let result = [];
+
+    this.traverse((node) => {
+      result.push(node.data);
+    });
+    return result;
   }
 }
 

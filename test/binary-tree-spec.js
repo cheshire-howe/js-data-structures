@@ -37,7 +37,11 @@ describe('Binary Search Tree', () => {
       nums.insert(22);
     });
 
-    it('inOrder returns ordered array', () => {
+    it('toArray returns ordered array', () => {
+      let arr = nums.toArray();
+
+      expect(arr).to.be.a('array');
+      expect(arr).to.deep.equal([3, 16, 22, 23, 37, 45, 99]);
     });
 
   });
