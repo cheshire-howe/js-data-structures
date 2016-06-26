@@ -156,5 +156,5 @@ class BST {
   }
 }
 
-module.exports = BST;
+export default BST;
 
